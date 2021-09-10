@@ -1,0 +1,238 @@
+﻿<Window x:Class="_06._09._2021.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_06._09._2021"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800" Background="White" MinWidth="800" MinHeight="500" MaxWidth="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+
+            <Button BorderThickness="0" HorizontalAlignment="Left" Width="50" Background="White" BorderBrush="Transparent" Cursor="Hand">
+                <StackPanel>
+                    <Image Source="menu_64px.png" Width="25" Height="30" Stretch="Uniform"/>
+                </StackPanel>
+            </Button>
+
+            <Border CornerRadius="5" Background="#F1F1F1" Width="180" Margin="0 10 10 10">
+                <Grid>
+                    <TextBox x:Name="btnSearch" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Search" Background="Transparent" BorderThickness="0"  Padding="8 0 0 2" Foreground="#989599" VerticalContentAlignment="Center"/>
+                </Grid>
+            </Border>
+
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label x:Name="personFullname" Padding="5 0" Content="Eva Summer" FontWeight="DemiBold" VerticalContentAlignment="Top"></Label>
+                <Label Grid.Row="1" Padding="6 0" Content="online" VerticalContentAlignment="Top" Foreground="#2299DB"></Label>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button Background="Transparent" BorderThickness="0" Cursor="Hand">
+                    <Image  Stretch="Uniform" Source="search_32px.png" Height="30" Width="20" ></Image>
+                </Button>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Button Background="Transparent" BorderThickness="0" Cursor="Hand">
+                    <Image  Stretch="Uniform" Source="menu_vertical_32px.png" Height="30" Width="20"  ></Image>
+                </Button>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image x:Name="messageSection" Source="Screenshot (101).png" Stretch="Fill" ></Image>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Background="Transparent" BorderThickness="0" Cursor="Hand">
+                    <Image Source="attach_32px.png" Stretch="Uniform" Height="30" Width="20"></Image>
+                </Button>
+
+                <Grid Grid.Column="1">
+                    <Border CornerRadius="5" Background="Transparent" Margin="0 10 10 10">
+                        <Grid>
+                            <TextBox x:Name="btnMsg" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Text="Write a message..." Background="Transparent" BorderThickness="0"  Padding="8 0 0 2" Foreground="#989599" VerticalContentAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Button Background="Transparent" BorderThickness="0" Cursor="Hand">
+                        <Image Stretch="Uniform" Source="grinning_face_32px.png" Height="30" Width="20"></Image>
+                    </Button>
+                </Grid>
+
+                <Grid Grid.Column="3">
+                    <Button Background="Transparent" BorderThickness="0" Cursor="Hand">
+                        <Image Stretch="Uniform" Source="microphone_24px.png" Height="30" Width="20"></Image>
+                    </Button>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="grid1" Background="#3B9DDA">
+                <Canvas>
+                    <Button x:Name="btnPerson1" Click="BtnPerson_Click" BorderThickness="0" Background="Transparent" Cursor="Hand">
+                        <Canvas>
+                            <Image Stretch="Uniform" Source="1st_48px.png"/>
+                            <Label Foreground="White" FontSize="12" Canvas.Left="224" >11:00</Label>
+                            <Label Name="lblPerson1" FontWeight="DemiBold" Foreground="White" Canvas.Left="50">Eva Summer</Label>
+                            <Label Foreground="White" FontWeight="SemiBold" FontSize="10" Canvas.Top="20" Canvas.Left="50">Reminds me of a Chinese prover...</Label>
+                            <Image Stretch="Uniform" Source="pin_32px.png" Canvas.Left="240" Canvas.Top="30" Height="15"/>
+                        </Canvas>
+                    </Button>
+                </Canvas>
+            </Grid>
+
+            <Grid x:Name="grid2" Grid.Row="1">
+                <Canvas>
+                    <Button Cursor="Hand" x:Name="btnPerson2" Click="BtnPerson_Click" BorderThickness="0" Background="Transparent">
+                        <Canvas>
+                            <Image Stretch="Uniform" Source="circled_2_48px.png"/>
+                            <Label Foreground="#989599" FontSize="12" Canvas.Left="224" >10:00</Label>
+                            <Label x:Name="lblPerson2" FontWeight="DemiBold" Foreground="Black" Canvas.Left="50">Alexandra Smith</Label>
+                            <Label Foreground="#989599" FontWeight="SemiBold" FontSize="10" Canvas.Top="20" Canvas.Left="50">This is amazing!</Label>
+                            <Image Stretch="Uniform" Source="circledColor_2_48px.png" Canvas.Left="240" Canvas.Top="30" Height="17"/>
+                        </Canvas>
+                    </Button>
+                </Canvas>
+            </Grid>
+
+            <Grid x:Name="grid3" Grid.Row="2">
+                <Canvas>
+                    <Button Cursor="Hand" x:Name="btnPerson3" Click="BtnPerson_Click" BorderThickness="0" Background="Transparent">
+                        <Canvas>
+                            <Image Stretch="Uniform" Source="circled_3_48px.png"/>
+                            <Label Foreground="#989599" FontSize="12" Canvas.Left="231" >9:00</Label>
+                            <Label x:Name="lblPerson3" FontWeight="DemiBold" Foreground="Black" Canvas.Left="50">Mike Apple</Label>
+                            <Image Stretch="Uniform" Source="grinning_face_with_big_eyes_48px.png" Canvas.Left="52" Canvas.Top="22" Height="17"/>
+                            <Label Foreground="#289EDE" FontWeight="SemiBold" FontSize="10" Canvas.Top="20" Canvas.Left="65">Sticker</Label>
+                            <Image Stretch="Uniform" Source="circledgray_2_24px.png" Canvas.Left="240" Canvas.Top="30" Height="17"/>
+                        </Canvas>
+                    </Button>
+                </Canvas>
+            </Grid>
+
+            <Grid x:Name="grid4" Grid.Row="3">
+                <Canvas>
+                    <Button Cursor="Hand" x:Name="btnPerson4" Click="BtnPerson_Click" BorderThickness="0" Background="Transparent">
+                        <Canvas>
+                            <Image Stretch="Uniform" Source="circled_4_48px.png"/>
+                            <Label Foreground="#989599" FontSize="12" Canvas.Left="231" >8:00</Label>
+                            <Image Stretch="Uniform" Source="group_50px.png" Canvas.Left="53" Canvas.Top="8" Height="11"/>
+                            <Label x:Name="lblPerson4" FontWeight="DemiBold" Foreground="Black" Canvas.Left="62">Evening Club</Label>
+                            <Label Foreground="#289EDE" FontWeight="SemiBold" FontSize="10" Canvas.Top="20" Canvas.Left="50">Eva: Photo</Label>
+                        </Canvas>
+                    </Button>
+                </Canvas>
+            </Grid>
+
+            <Grid x:Name="grid5" Grid.Row="4">
+                <Canvas>
+                    <Button Cursor="Hand" x:Name="btnPerson5" Click="BtnPerson_Click" BorderThickness="0" Background="Transparent">
+                        <Canvas>
+                            <Image Stretch="Uniform" Source="circled_5_48px.png"/>
+                            <Label Foreground="#989599" FontSize="12" Canvas.Left="231" >7:00</Label>
+                            <Image Stretch="Uniform" Source="group_50px.png" Canvas.Left="53" Canvas.Top="8" Height="11"/>
+                            <Label x:Name="lblPerson5" FontWeight="DemiBold" Foreground="Black" Canvas.Left="62">Old Pirates</Label>
+                            <Label Foreground="#289EDE" FontWeight="SemiBold" FontSize="10" Canvas.Top="20" Canvas.Left="50">Max:</Label>
+                            <Label Foreground="#989599" FontWeight="SemiBold" FontSize="10" Canvas.Top="20" Canvas.Left="75">Yo-ho-ho!</Label>
+                        </Canvas>
+                    </Button>
+                </Canvas>
+            </Grid>
+
+            <Grid x:Name="grid6" Grid.Row="5">
+                <Canvas>
+                    <Button Cursor="Hand" x:Name="btnPerson6" Click="BtnPerson_Click" BorderThickness="0" Background="Transparent">
+                        <Canvas>
+                            <Image Stretch="Uniform" Source="circled_6_48px.png"/>
+                            <Image Stretch="Uniform" Source="double_tick_64px.png" Canvas.Left="220" Canvas.Top="6" Height="14"/>
+                            <Label Foreground="#989599" FontSize="12" Canvas.Left="231" >6:00</Label>
+                            <Label x:Name="lblPerson6" FontWeight="DemiBold" Foreground="Black" Canvas.Left="50">Max Bright</Label>
+                            <Label Foreground="#989599" FontWeight="SemiBold" FontSize="10" Canvas.Top="20" Canvas.Left="50">How about some coffee?</Label>
+                        </Canvas>
+                    </Button>
+                </Canvas>
+            </Grid>
+
+            <Grid x:Name="grid7" Grid.Row="6">
+                <Canvas>
+                    <Button Cursor="Hand" x:Name="btnPerson7" Click="BtnPerson_Click" BorderThickness="0" Background="Transparent">
+                        <Canvas>
+                            <Image Stretch="Uniform" Source="circled_7_48px.png" />
+                            <Image Stretch="Uniform" Source="double_tick_64px.png" Canvas.Left="220" Canvas.Top="6" Height="14"/>
+                            <Label Foreground="#989599" FontSize="12" Canvas.Left="231" >5:00</Label>
+                            <Label x:Name="lblPerson7" FontWeight="DemiBold" Foreground="Black" Canvas.Left="50">Natalie Parker</Label>
+                            <Label Foreground="#989599" FontWeight="SemiBold" FontSize="10" Canvas.Top="20" Canvas.Left="50">OK, great)</Label>
+                        </Canvas>
+                    </Button>
+                </Canvas>
+            </Grid>
+
+            <Grid x:Name="grid8" Grid.Row="7">
+                <Canvas>
+                    <Button Cursor="Hand" x:Name="btnPerson8" Click="BtnPerson_Click" BorderThickness="0" Background="Transparent">
+                        <Canvas>
+                            <Image Stretch="Uniform" Source="circled_8_48px.png" />
+                            <Label Foreground="#989599" FontSize="12" Canvas.Left="231" >4:00</Label>
+                            <Label x:Name="lblPerson8" FontWeight="DemiBold" Foreground="Black" Canvas.Left="50">Davy Jones</Label>
+                            <Label Foreground="#289EDE" FontWeight="SemiBold" FontSize="10" Canvas.Top="20" Canvas.Left="50">Keynote.pdf</Label>
+                        </Canvas>
+                    </Button>
+                </Canvas>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+
+
+
+</Window>
+    
